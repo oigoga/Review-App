@@ -1,14 +1,13 @@
 import Header from "./components/Header";
 import './App.css'
+import ReviewItem from "./components/ReviewItem";
 
 function App() {
   return (
-    <>
-      <Header salute="HEY THERE!" />
-      <div>
-        <p className="text">Reviewss</p>
-      </div>
-    </>
+    <div>
+    <Header/>
+     <ReviewItem/>
+    </div>
   );
 }
 export default App;
