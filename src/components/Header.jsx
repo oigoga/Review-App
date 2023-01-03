@@ -7,8 +7,8 @@ function Header({text, bgcolor, textcolor}) {
     }
 
     return(
-        <header style={{headerStyle}} className='container'>
-            <div className="container">
+        <header style={headerStyle} className='head'>
+            <div >
                 <h1>
                     {text}
                 </h1>
@@ -18,7 +18,7 @@ function Header({text, bgcolor, textcolor}) {
 }
 Header.defaultProps = {
     text:'Review Application!',
-    bgcolor: ' #FF6A95',
+    bgcolor: ' #ff8906',
     textcolor: '#fff'
 }
 Header.propTypes = {

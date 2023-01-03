@@ -1,12 +1,12 @@
-import { useState } from "react";
 
-function ReviewItem() {
+
+function ReviewItem(item) {
  
 
   return (
     <div className="card">
-      <div className="num-display">10</div>
-      <div className="text-display">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+      <div className="num-display">{item.rating}</div>
+      <p>{item.text}</p>
       
     </div>
   );
