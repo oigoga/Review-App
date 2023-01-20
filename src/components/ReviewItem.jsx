@@ -1,15 +1,26 @@
+import { FaTimes } from "react-icons/fa";
+import Card from "./Card";
+import PropTypes from 'prop-types';
 
 
-function ReviewItem(item) {
+
+function ReviewItem({item, revDelete}) {
  
 
   return (
-    <div className="card">
+    <>
+      <Card>
       <div className="num-display">{item.rating}</div>
+      <button onClick={() => revDelete(item.id)} className="close">
+        <FaTimes />
+      </button>
       <p>{item.text}</p>
       
-    </div>
+    </Card>
+    </>
   );
 }
-
+ReviewItem.PropTypes = {
+  item: PropTypes.object,
+}
 export default ReviewItem;

@@ -5,12 +5,16 @@ import reviewData from "./components/data/ReviewData";
 
 function App() {
 
-
+ const deleteReview = (id) => {
+  if (window.confirm('Are you sure you want to delete this?')){
+    setReview(review.filter((item) => item.id !== id))
+  }
+ }
   const [review, setReview] = useState(reviewData)
   return (
     <div className="container">
       <Header />
-      <ReviewList review={review} />
+      <ReviewList review={review} revDelete={deleteReview} />
     </div>
   );
 }
