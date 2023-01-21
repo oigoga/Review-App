@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import ReviewList from "./components/ReviewList";
 import {useState} from 'react';
 import reviewData from "./components/data/ReviewData";
-
+import ReviewStats from "./components/ReviewStats";
 function App() {
 
  const deleteReview = (id) => {
@@ -14,7 +14,9 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <ReviewStats review={ review}/>
       <ReviewList review={review} revDelete={deleteReview} />
+
     </div>
   );
 }
