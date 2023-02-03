@@ -1,5 +1,5 @@
-import ReviewItem from "./ReviewItem"
-import propTypes from 'prop-types'
+import ReviewItem from "./ReviewItem";
+import PropTypes from 'prop-types';
 function ReviewList({review, revDelete}) {
     if (!review || review.length === 0){
         return <p>No review Yet</p>}
@@ -13,11 +13,11 @@ function ReviewList({review, revDelete}) {
 }
 
 ReviewList.PropTypes = {
-    review: propTypes.arrayOf(
-        propTypes.shape({
-            id: propTypes.number,
-            Text: propTypes.string,
-            rating: propTypes.number,
+    review: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            Text: PropTypes.string,
+            rating: PropTypes.number,
         })
     ),
 };
