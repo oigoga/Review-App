@@ -4,7 +4,13 @@ import {useState} from 'react';
 import reviewData from "./components/data/ReviewData";
 import ReviewStats from "./components/ReviewStats";
 import ReviewForm from "./components/ReviewForm";
+import {v4 as uuidv4} from 'uuid';
 function App() {
+
+  const addReview = (newReview) => {
+    newReview.id = uuidv4()
+    setReview([newReview, ...review])
+  }
 
  const deleteReview = (id) => {
   if (window.confirm('Are you sure you want to delete this?')){
@@ -15,7 +21,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <ReviewForm/>
+      <ReviewForm handleAdd={addReview}/>
       <ReviewStats review={ review}/>
       <ReviewList review={review} revDelete={deleteReview} />
 

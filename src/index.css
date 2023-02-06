@@ -222,6 +222,11 @@ input:focus {
   .rating li {
     margin: 10px 3px;
   }
+  .head {
+    font-size: medium;
+    text-align: center;
+    color: #202142;
+  }
 
   .rating {
     display: flex;
@@ -233,5 +238,13 @@ input:focus {
 
   .input-group input {
     width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .head {
+    font-size: 12px;
+    text-align: center;
+    color: #202142;
   }
 }

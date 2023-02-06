@@ -1,7 +1,10 @@
 import Card from "./Card";
 import { useState } from "react";
 import Button from "./Button";
-function ReviewForm() {
+import Rating from "./Rating";
+
+
+function ReviewForm({handleAdd}) {
     const [text, setText] = useState('')
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
@@ -21,10 +24,25 @@ function ReviewForm() {
       }
         setText(e.target.value  )
     }
+
+    const formSubmit = (e) => {
+      e.preventDefault()
+      if(text.trim().length > 15){
+        const newReview = {
+           text,
+          rating
+        }
+        handleAdd(newReview)
+        setText('')
+       
+      }
+    }
+
   return (
     <Card>
-      <form>
+      <form onSubmit={formSubmit}>
         <h3>Kindly Leave Me a Review</h3>
+        <Rating select={(rating) => setRating(rating)}/>
         <div className="input-group">
             <input type="text" placeholder="Write me a Review" onChange={changeText} value={text} />
             <Button type="submit" isDisabled={btnDisabled}>Submit</Button>
