@@ -20,4 +20,4 @@ npm run dev
 
 ### Deployed site:
 
-https://oigoga-to-do-app.netlify.app/
+https://reviewapp-oigoga.netlify.app/
